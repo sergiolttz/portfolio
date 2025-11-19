@@ -1,0 +1,47 @@
+@use "variables" as *;
+
+.hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 800px;
+        padding: 0 20px;
+        position: relative;
+        z-index: 10;
+
+        .hero-title-block {
+            h1 {
+                font-size: 4rem;
+                font-weight: 800;
+                color: $color-text-light;
+            }
+        }
+
+        .hero-cta-block {
+            p {
+                margin-bottom: 30px;
+                font-size: 1.1rem;
+                color: $color-text-light;
+            }
+        }
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 0 15px;
+    }
+}

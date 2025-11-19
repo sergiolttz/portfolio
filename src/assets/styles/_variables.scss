@@ -1,5 +1,18 @@
-$color-bg: #0f0f0f;
-$color-text: #f5f5f5;
-$color-primary: #0077ff;
+$color-dark-bg: #010b24;
+$color-secondary-bg: #1f1f1f;
+$color-text-light: #ffffff;
+$color-primary: #00bcd4;
+$color-accent-blue: #007bff;
+$color-border: #333;
+
+$btn-bg: rgba(255, 255, 255, 0.1);
+$btn-bg-hover: rgba(255, 255, 255, 0.2);
+$btn-text: $color-text-light;
+
+$blob-color1: #004cff;
+$blob-color2: #00ffff;
+
+$card-radius: 16px;
+$card-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.5);
 
 $font-main: "Poppins", sans-serif;

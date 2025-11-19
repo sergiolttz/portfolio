@@ -1,14 +1,57 @@
 @use "variables" as *;
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    font-family: $font-main;
-    background-color: $color-bg;
-    color: $color-text;
+    font-family: "Inter", Arial, sans-serif;
+    background-color: $color-dark-bg;
+    color: $color-text-light;
     line-height: 1.6;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+a {
+    color: $color-text-light;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: $color-primary;
+}
+
+/* --- Global Structure & Headings --- */
+.section {
+    padding: 80px 10%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    color: $color-text-light;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: $color-text-light;
+}
+
+h3 {
+    font-size: 1.8rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: $color-text-light;
 }

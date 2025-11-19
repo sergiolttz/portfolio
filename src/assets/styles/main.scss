@@ -1,8 +1,12 @@
 @use "variables" as *;
-@use "mixins" as *;
+
 @use "base";
+@use "buttons";
 @use "navbar";
+@use "hero";
+@use "blob";
+@use "card";
+@use "about";
+@use "projects";
+@use "contact";
 @use "footer";
-@use "layout";
-@use "home";
-@use "components";

@@ -1,0 +1,41 @@
+@use "variables" as *;
+
+.footer {
+    background-color: $color-dark-bg;
+    padding: 40px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid $color-border;
+    position: relative;
+    z-index: 5;
+
+    .footer-logo {
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 15px;
+
+        a {
+            color: $color-text-light;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}

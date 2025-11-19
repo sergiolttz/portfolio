@@ -1,0 +1,45 @@
+@use "variables" as *;
+
+.blob {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, $blob-color1, $blob-color2);
+    border-radius: 50%;
+    filter: blur(150px);
+    opacity: 0.7;
+    animation:
+        float-centered-global 15s infinite alternate ease-in-out,
+        blobMorph 8s infinite ease-in-out;
+    z-index: 1;
+    transform: translate(-50%, 0) scale(1.5);
+}
+
+/* --- Animaciones --- */
+@keyframes float-centered-global {
+    0% {
+        transform: translate(-50%, -10%) scale(1.6);
+    }
+
+    100% {
+        transform: translate(-50%, 30%) scale(1.7);
+    }
+}
+
+@keyframes blobMorph {
+
+    0%,
+    100% {
+        border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    }
+
+    34% {
+        border-radius: 70% 30% 60% 40% / 60% 40% 60% 40%;
+    }
+
+    67% {
+        border-radius: 40% 60% 40% 60% / 55% 55% 45% 45%;
+    }
+}
