@@ -1,4 +1,4 @@
-import ProjectCard from "./ProjectCard";
+import Card from "./Card";
 
 export default function Projects() {
     const devProjects = [
@@ -13,18 +13,38 @@ export default function Projects() {
         { title: "Diseño 3", description: "Descripción Diseño 3" },
     ];
 
+    const renderCardContent = ({ title, description }) => (
+        <>
+            <div className="project-image-placeholder"></div>
+            <h2>{title}</h2>
+            <p>{description}</p>
+            <div className="card-footer">
+                <button className="card-button">Ver detalles</button>
+                <div className="card-icon">→</div>
+            </div>
+        </>
+    );
+
     return (
         <section id="projects" className="section projects-section">
             <h2>Proyectos</h2>
 
             <h3 className="projects-category">Desarrollo Web</h3>
             <div className="projects-grid">
-                {devProjects.map((p, i) => <ProjectCard key={i} {...p} />)}
+                {devProjects.map((p, i) => (
+                    <Card key={i} rotation={2} className="project-card">
+                        {renderCardContent(p)}
+                    </Card>
+                ))}
             </div>
 
             <h3 className="projects-category">Diseño Visual</h3>
             <div className="projects-grid">
-                {designProjects.map((p, i) => <ProjectCard key={i} {...p} />)}
+                {designProjects.map((p, i) => (
+                    <Card key={i} rotation={2} className="project-card">
+                        {renderCardContent(p)}
+                    </Card>
+                ))}
             </div>
         </section>
     );

@@ -63,40 +63,6 @@
     }
 }
 
-/* -------------------- LANGUAGE DESKTOP -------------------- */
-.language-toggle {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 4px;
-    border-radius: 8px;
-    transform: translateZ(10px);
-
-    .lang-btn {
-        padding: 6px 14px;
-        border-radius: 6px;
-        cursor: pointer;
-        border: none;
-        background: transparent;
-        font-size: 0.9rem;
-        font-weight: 500;
-        color: $color-text-light;
-        transition: all 0.25s ease;
-
-        &.active {
-            background: $color-primary;
-            color: $color-dark-bg;
-            box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
-            transform: translateY(-1px);
-        }
-
-        &:hover {
-            background: rgba(255, 255, 255, 0.08);
-        }
-    }
-}
-
 /* -------------------- HAMBURGER -------------------- */
 .hamburger {
     display: none;
@@ -179,7 +145,6 @@
         color: $color-text-light;
         cursor: pointer;
         z-index: 10003;
-        /* 🔥 fix importante */
     }
 
     .nav-menu {
@@ -207,34 +172,6 @@
         justify-content: center;
         padding-bottom: 20px;
     }
-        .lang-mobile {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-    
-            .lang-btn {
-                padding: 8px 18px;
-                border-radius: 8px;
-                cursor: pointer;
-                border: none;
-                background: rgba(255, 255, 255, 0.08);
-                font-size: 1rem;
-                font-weight: 500;
-                color: $color-text-light;
-                transition: all 0.25s ease;
-    
-                &.active {
-                    background: $color-primary;
-                    color: $color-dark-bg;
-                    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
-                    transform: translateY(-1px);
-                }
-    
-                &:hover {
-                    background: rgba(255, 255, 255, 0.15);
-                }
-            }
-        }
 }
 
 /* -------------------- RESPONSIVE -------------------- */
