@@ -55,23 +55,6 @@
                 flex: 1;
             }
         }
-
-        .btn-primary {
-            width: 100%;
-            padding: 15px;
-            margin-top: 5px;
-            border-radius: $card-radius;
-            font-weight: 600;
-            font-size: 1.1rem;
-            letter-spacing: 0.5px;
-            transform: translateZ(12px);
-            transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
-
-            &:hover {
-                transform: translateZ(20px) scale(1.02);
-                box-shadow: 0 0 15px rgba($color-primary, 0.3);
-            }
-        }
     }
 }
 

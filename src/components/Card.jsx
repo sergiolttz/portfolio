@@ -51,31 +51,10 @@ export default function Card({ rotation = 2, children, className = "" }) {
         };
     }, [rotation]);
 
-    // --- Efecto Ripple (delegado al contenedor) ---
-    const handleRipple = (e) => {
-        const target = e.target.closest(".card-button, .btn-primary");
-        if (!target) return;
-
-        const rect = target.getBoundingClientRect();
-        const ripple = document.createElement("span");
-        ripple.className = "ripple";
-
-        const size = Math.max(rect.width, rect.height) * 2;
-
-        ripple.style.width = ripple.style.height = `${size}px`;
-        ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
-        ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
-
-        target.appendChild(ripple);
-
-        setTimeout(() => ripple.remove(), 500);
-    };
-
     return (
         <div
             ref={cardRef}
             className={`card ${className}`}
-            onClick={handleRipple}
         >
             <div ref={contentRef} className="card-content">
                 {children}

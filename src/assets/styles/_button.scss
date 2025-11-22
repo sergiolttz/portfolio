@@ -1,0 +1,39 @@
+@use "variables" as *;
+
+.btn-primary {
+    width: 100%;
+    padding: 15px;
+    margin-top: 5px;
+    border-radius: $btn-radius;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    transform: translateZ(12px);
+    transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+    background: $btn-bg;
+    color: $btn-text;
+    border: none;
+    position: relative;
+    overflow: hidden;
+
+    .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba($color-primary, 0.4);
+            transform: scale(0);
+            animation: ripple-animation 0.5s ease-out;
+            pointer-events: none;
+        }
+
+    @keyframes ripple-animation {
+        to {
+            transform: scale(1);
+            opacity: 0;
+        }
+    }
+    
+    &:hover {
+        transform: translateZ(20px) scale(1.02);
+        box-shadow: 0 0 15px rgba($color-primary, 0.3);
+    }
+}

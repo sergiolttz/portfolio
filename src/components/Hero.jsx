@@ -1,3 +1,5 @@
+import Button from "./Button";
+
 export default function Hero() {
     return (
         <section className="hero">
@@ -7,7 +9,7 @@ export default function Hero() {
                 </div>
                 <div className="hero-cta-block">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <a href="#projects" className="btn-primary">Botón de Acción</a>
+                    <Button>Botón de Acción</Button>
                 </div>
             </div>
         </section>

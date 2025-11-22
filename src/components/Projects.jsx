@@ -1,4 +1,6 @@
 import Card from "./Card";
+import Button from "./Button";
+
 
 export default function Projects() {
     const devProjects = [
@@ -19,7 +21,7 @@ export default function Projects() {
             <h2>{title}</h2>
             <p>{description}</p>
             <div className="card-footer">
-                <button className="card-button">Ver detalles</button>
+                <Button>Ver más</Button>
                 <div className="card-icon">→</div>
             </div>
         </>

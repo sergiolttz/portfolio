@@ -1,4 +1,5 @@
 import Card from "./Card";
+import Button from "./Button";
 
 export default function Contact() {
     return (
@@ -15,7 +16,7 @@ export default function Contact() {
                             <input type="email" placeholder="Email" required />
                         </div>
                         <textarea placeholder="Mensaje" rows="5" required></textarea>
-                        <button type="submit" className="btn-primary">Enviar</button>
+                        <Button type="submit">Enviar</Button>
                     </form>
                 </div>
             </Card>
