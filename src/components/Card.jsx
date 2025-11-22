@@ -1,6 +1,6 @@
-import { useRef, useEffect } from "react";
+import { useEffect, useRef } from "react";
 
-export default function Card({ rotation = 2, children, className = "" }) {
+export default function Card({ children, className = "", rotation = 2 }) {
     const cardRef = useRef(null);
     const contentRef = useRef(null);
 
@@ -10,52 +10,49 @@ export default function Card({ rotation = 2, children, className = "" }) {
 
         if (!card || !content) return;
 
-        const isTouch =
-            "ontouchstart" in window || navigator.maxTouchPoints > 0;
+        const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
 
-        if (isTouch) return;
+        if (!isTouchDevice) {
+            const handleMouseMove = (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
 
-        // --- Movimiento 3D ---
-        const handleMove = (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
 
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
+                const rotateY = (rotation * (x - centerX)) / centerX;
+                const rotateX = (-rotation * (y - centerY)) / centerY;
 
-            const rotateY = (rotation * (x - centerX)) / centerX;
-            const rotateX = (-rotation * (y - centerY)) / centerY;
+                content.style.transform = `
+                    rotateX(${rotateX}deg) 
+                    rotateY(${rotateY}deg)
+                `;
 
-            content.style.transform = `
-                rotateX(${rotateX}deg)
-                rotateY(${rotateY}deg)
-            `;
-        };
+                card.style.setProperty("--x", `${(x / rect.width) * 100}%`);
+                card.style.setProperty("--y", `${(y / rect.height) * 100}%`);
+            };
 
-        const handleLeave = () => {
-            content.style.transform = "rotateX(0) rotateY(0)";
-            content.style.transition = "transform 0.5s ease";
+            const handleMouseLeave = () => {
+                content.style.transform = "rotateX(0) rotateY(0)";
+                content.style.transition = "transform 0.5s ease";
+                setTimeout(() => {
+                    content.style.transition = "";
+                }, 500);
+            };
 
-            setTimeout(() => {
-                content.style.transition = "";
-            }, 500);
-        };
+            card.addEventListener("mousemove", handleMouseMove);
+            card.addEventListener("mouseleave", handleMouseLeave);
 
-        card.addEventListener("mousemove", handleMove);
-        card.addEventListener("mouseleave", handleLeave);
-
-        return () => {
-            card.removeEventListener("mousemove", handleMove);
-            card.removeEventListener("mouseleave", handleLeave);
-        };
+            return () => {
+                card.removeEventListener("mousemove", handleMouseMove);
+                card.removeEventListener("mouseleave", handleMouseLeave);
+            };
+        }
     }, [rotation]);
 
     return (
-        <div
-            ref={cardRef}
-            className={`card ${className}`}
-        >
+        <div ref={cardRef} className={`card ${className}`} data-rotation-factor={rotation}>
             <div ref={contentRef} className="card-content">
                 {children}
             </div>

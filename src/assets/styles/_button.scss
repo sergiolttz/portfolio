@@ -1,39 +1,42 @@
 @use "variables" as *;
 
 .btn-primary {
-    width: 100%;
-    padding: 15px;
-    margin-top: 5px;
-    border-radius: $btn-radius;
-    font-weight: 600;
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
-    transform: translateZ(12px);
-    transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
-    background: $btn-bg;
-    color: $btn-text;
+    padding: 0.7rem 1.4rem;
+    background: rgba(255, 255, 255, 0.1);
     border: none;
+    border-radius: 100px;
+    color: $btn-text;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(5px);
+    transition: background-color 0.25s ease, ease, box-shadow 0.25s ease;
+        z-index: 5;
+        transform: translateZ(40px);
 
-    .ripple {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba($color-primary, 0.4);
-            transform: scale(0);
-            animation: ripple-animation 0.5s ease-out;
-            pointer-events: none;
-        }
-
-    @keyframes ripple-animation {
-        to {
-            transform: scale(1);
-            opacity: 0;
-        }
-    }
-    
     &:hover {
-        transform: translateZ(20px) scale(1.02);
+        transform: scale(1.02);
         box-shadow: 0 0 15px rgba($color-primary, 0.3);
+        background: rgba(255, 255, 255, 0.213);
+        transform: translateZ(40px) scale(1.02);
+    }
+}
+
+.ripple {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.5s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(2);
+        opacity: 0;
     }
 }

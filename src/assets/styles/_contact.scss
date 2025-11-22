@@ -1,66 +1,66 @@
 @use "variables" as *;
 
-.contact-card {
-    padding: 40px;
-    width: 100%;
-    gap: 40px;
-    align-items: flex-start;
-    text-align: center;
+.contact-section {
+    .contact-card {
+        padding: 40px;
+        width: 100%;
+        text-align: center;
 
-    h2 {
-        font-size: 2.5rem;
-        margin-bottom: 5px;
-    }
-
-    .subtitle {
-        margin-bottom: 30px;
-        opacity: 0.9;
-    }
-
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-
-        input,
-        textarea {
-            width: 100%;
-            background: $color-dark-bg;
-            color: $color-text-light;
-            border: 1px solid $color-border;
-            padding: 15px 18px;
-            border-radius: $card-radius;
-            font-size: 1rem;
-            transition: border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
-            transform: translateZ(12px);
-
-            &:hover {
-                border-color: $color-primary;
-                box-shadow: 0 0 8px rgba($color-primary, 0.2);
-            }
-
-            &:focus {
-                border-color: $color-primary;
-                outline: none;
-                transform: translateZ(20px) scale(1.02);
-                box-shadow: 0 0 12px rgba($color-primary, 0.3);
-            }
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
         }
 
-        .form-group-inline {
+        .subtitle {
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .contact-form {
             display: flex;
+            flex-direction: column;
             gap: 20px;
 
-            input {
-                flex: 1;
+            input,
+            textarea {
+                width: 100%;
+                background: $color-dark-bg;
+                color: $color-text-light;
+                border: 1px solid $color-border;
+                padding: 15px 18px;
+                border-radius: $btn-radius;
+                font-size: 1rem;
+                transition: border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+                transform: translateZ(12px);
+
+                &:hover {
+                    border-color: $color-primary;
+                    box-shadow: 0 0 8px rgba($color-primary, 0.2);
+                }
+
+                &:focus {
+                    border-color: $color-primary;
+                    outline: none;
+                    transform: translateZ(20px) scale(1.02);
+                    box-shadow: 0 0 12px rgba($color-primary, 0.3);
+                }
+            }
+
+            .form-group-inline {
+                display: flex;
+                gap: 20px;
+
+                input {
+                    flex: 1;
+                }
             }
         }
     }
 }
 
-/* MOBILE RESPONSIVE */
+/* Responsive */
 @media (max-width: 768px) {
-    .contact-form .form-group-inline {
+    .contact-section .contact-form .form-group-inline {
         flex-direction: column;
         gap: 15px;
     }
