@@ -1,4 +1,8 @@
 @charset "UTF-8";
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -64,22 +68,22 @@ h3 {
   font-weight: 600;
   font-size: 0.9rem;
   cursor: pointer;
-  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-  transition: background-color 0.25s ease, ease, box-shadow 0.25s ease;
   z-index: 5;
-  transform: translateZ(40px);
-}
-.btn-primary:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
-  background: rgba(255, 255, 255, 0.213);
-  transform: translateZ(40px) scale(1.02);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  transform: translateZ(40px) scale(1);
 }
 
+.btn-primary:hover {
+  transform: translateZ(40px) scale(1.02);
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 0 20px rgba(0, 188, 212, 0.35);
+}
+
+/* --- Ripple --- */
 .ripple {
   position: absolute;
   background: rgba(255, 255, 255, 0.3);
@@ -101,20 +105,16 @@ h3 {
   top: 0;
   z-index: 100;
 }
-.header .navbar-container.card {
+.header .navbar-container {
   max-width: 800px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 }
-.header .navbar-container.card .card-content {
+.header .navbar-container .navbar-content {
   padding: 10px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 30px;
 }
 
 /* -------------------- LOGO -------------------- */
@@ -263,7 +263,6 @@ h3 {
   color: #ffffff;
   cursor: pointer;
   z-index: 10003;
-  /* 🔥 fix importante */
 }
 .nav-menu-mobile .nav-menu {
   list-style: none;
@@ -577,8 +576,7 @@ h3 {
   flex-direction: column;
   gap: 20px;
 }
-.contact-section .contact-card .contact-form input,
-.contact-section .contact-card .contact-form textarea {
+.contact-section .contact-card .contact-form input {
   width: 100%;
   background: #010b24;
   color: #ffffff;
@@ -586,15 +584,34 @@ h3 {
   padding: 15px 18px;
   border-radius: 50px;
   font-size: 1rem;
-  transition: border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
   transform: translateZ(12px);
+  transition: border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
 }
-.contact-section .contact-card .contact-form input:hover,
+.contact-section .contact-card .contact-form input:hover {
+  border-color: #00bcd4;
+  box-shadow: 0 0 8px rgba(0, 188, 212, 0.2);
+}
+.contact-section .contact-card .contact-form input:focus {
+  border-color: #00bcd4;
+  outline: none;
+  transform: translateZ(20px) scale(1.02);
+  box-shadow: 0 0 12px rgba(0, 188, 212, 0.3);
+}
+.contact-section .contact-card .contact-form textarea {
+  width: 100%;
+  background: #010b24;
+  color: #ffffff;
+  border: 1px solid #333;
+  padding: 15px 18px;
+  border-radius: 16px;
+  font-size: 1rem;
+  transform: translateZ(12px);
+  transition: border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
 .contact-section .contact-card .contact-form textarea:hover {
   border-color: #00bcd4;
   box-shadow: 0 0 8px rgba(0, 188, 212, 0.2);
 }
-.contact-section .contact-card .contact-form input:focus,
 .contact-section .contact-card .contact-form textarea:focus {
   border-color: #00bcd4;
   outline: none;

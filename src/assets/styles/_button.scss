@@ -9,22 +9,24 @@
     font-weight: 600;
     font-size: 0.9rem;
     cursor: pointer;
-    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
     backdrop-filter: blur(5px);
-    transition: background-color 0.25s ease, ease, box-shadow 0.25s ease;
-        z-index: 5;
-        transform: translateZ(40px);
-
-    &:hover {
-        transform: scale(1.02);
-        box-shadow: 0 0 15px rgba($color-primary, 0.3);
-        background: rgba(255, 255, 255, 0.213);
-        transform: translateZ(40px) scale(1.02);
-    }
+    z-index: 5;
+    transition:
+        background-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+    transform: translateZ(40px) scale(1);
 }
 
+.btn-primary:hover {
+    transform: translateZ(40px) scale(1.02);
+    background: rgba(255, 255, 255, 0.22);
+    box-shadow: 0 0 20px rgba($color-primary, 0.35);
+}
+
+/* --- Ripple --- */
 .ripple {
     position: absolute;
     background: rgba(255, 255, 255, 0.3);

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import LanguageToggle from "./LanguageToggle";
+import Card from "./Card";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -9,8 +10,11 @@ export default function Navbar() {
 
     return (
         <header className="header">
-            <div className={`navbar-container card ${menuOpen ? "hide-navbar" : ""}`}>
-                <div className="card-content navbar-content">
+            <Card
+                className={`navbar-container ${menuOpen ? "hide-navbar" : ""}`}
+                rotation={2}
+            >
+                <div className="navbar-content">
 
                     <div className="logo">
                         <a href="#" onClick={closeMenu}>
@@ -39,7 +43,7 @@ export default function Navbar() {
                     </div>
 
                 </div>
-            </div>
+            </Card>
 
             <nav className={`nav-menu-mobile ${menuOpen ? "active" : ""}`}>
                 <div className="mobile-logo">

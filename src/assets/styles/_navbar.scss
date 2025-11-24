@@ -1,25 +1,22 @@
 @use "variables" as *;
 
+
 .header {
     padding: 20px 0;
     position: sticky;
     top: 0;
     z-index: 100;
 
-    .navbar-container.card {
+    .navbar-container {
         max-width: 800px;
         margin: 0 auto;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: $card-shadow;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-
-        .card-content {
+        
+        .navbar-content  {
             padding: 10px 30px;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 30px;
         }
     }
 }
@@ -179,7 +176,6 @@
         color: $color-text-light;
         cursor: pointer;
         z-index: 10003;
-        /* 🔥 fix importante */
     }
 
     .nav-menu {
