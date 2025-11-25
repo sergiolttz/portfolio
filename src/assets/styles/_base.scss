@@ -12,12 +12,17 @@ html {
 
 body {
     font-family: "Inter", Arial, sans-serif;
-    background-color: $color-dark-bg;
+    //background-color: $color-dark-bg;
     color: $color-text-light;
     line-height: 1.6;
     position: relative;
     min-height: 100vh;
     overflow-x: hidden;
+    background:
+            radial-gradient(hsla(210, 93%, 23%, 0.2) 1px, transparent 0px),
+            linear-gradient(160deg, $color-dark-bg, $color-dark-bg);
+    background-repeat: repeat, no-repeat;
+    background-size: 30px 30px, cover;
 }
 
 a {

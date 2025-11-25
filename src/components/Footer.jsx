@@ -1,12 +1,19 @@
 export default function Footer() {
     return (
         <footer className="footer">
-            <span className="footer-logo">Sergio Lattanzio</span>
+            <div className="footer-logo">
+                <a href="#">
+                    <img src="src/assets/images/logo_white.png" alt="Logo" />
+                </a>
+            </div>
+
             <div className="social-links">
-                <a href="#" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
-                <a href="#" aria-label="GitHub"><i className="fab fa-github"></i></a>
-                <a href="#" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
-                <a href="#" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/sergiolttz/" className="social-box" aria-label="LinkedIn">
+                    <img src="src/assets/images/linkedin.png" alt="LinkedIn" />
+                </a>
+                <a href="https://github.com/sergiolttz/" className="social-box" aria-label="GitHub">
+                    <img src="src/assets/images/github.png" alt="GitHub"/>
+                </a>
             </div>
         </footer>
     );

@@ -8,8 +8,8 @@ export default function Hero() {
                     <h1>Sergio Lattanzio</h1>
                 </div>
                 <div className="hero-cta-block">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <Button>Botón de Acción</Button>
+                    <p>Frontend Developer enfocado en construir interfaces modernas y centradas en el usuario.</p>
+                    <Button>Ver proyectos</Button>
                 </div>
             </div>
         </section>

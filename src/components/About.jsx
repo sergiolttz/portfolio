@@ -7,29 +7,63 @@ export default function About() {
 
             <Card className="about-content" rotation={2}>
                 <div className="about-text-block">
-                    <p className="lorem-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    <p className="about-text">
+                        Soy desarrollador frontend con experiencia creando interfaces y piezas visuales para proyectos web y digitales. Me gusta trabajar en la intersección del diseño y el código, construyendo experiencias claras, funcionales y visualmente consistentes. <br />
+                        Me motiva transformar ideas en productos reales, cuidar los detalles y pensar en cómo las personas interactúan con cada elemento. Disfruto crear sitios web modernos, identidades visuales para proyectos y soluciones digitales que se sientan intuitivas y bien pensadas que no solo se vean bien, sino que realmente faciliten la experiencia del usuario.
                     </p>
 
-                    <p className="lorem-text">
-                        Experiencia Resumen<br />
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    <p className="about-text">
+                        <br />
+                        Puedo desarrollar landing pages, sitios web completos, sistemas de componentes, interfaces limpias y accesibles, pequeñas aplicaciones interactivas y soluciones visuales que complementen un proyecto digital. También puedo diseñar piezas gráficas como banners, contenido para redes, identidades visuales, prototipos  y otros elementos que conecten el aspecto visual con la experiencia del usuario.
                     </p>
-
-                    <p className="lorem-text">
-                        Tecnologías<br />
-                        HTML, CSS/SASS, JavaScript, React.
+                    <p className="about-text">
+                        <br />
+                        Herramientas | Desarrollo Web:
                     </p>
-
                     <div className="tech-icons">
-                        <span className="tech-tag">HTML</span>
-                        <span className="tech-tag">CSS</span>
-                        <span className="tech-tag">React</span>
+
+                        <div className="tech-box">
+                            <img src="src/assets/images/html5.png" alt="HTML" className="tech-icon" />
+                        </div>
+
+                        <div className="tech-box">
+                            <img src="src/assets/images/css.png" alt="CSS" className="tech-icon" />
+                        </div>
+
+                        <div className="tech-box">
+                            <img src="src/assets/images/javascript.png" alt="JavaScript" className="tech-icon" />
+                        </div>
+
+                        <div className="tech-box">
+                            <img src="src/assets/images/react.png" alt="React" className="tech-icon" />
+                        </div>
+
+                        <div className="tech-box">
+                            <img src="src/assets/images/python.png" alt="Python" className="tech-icon" />
+                        </div>
+
+                        <div className="tech-box">
+                            <img src="src/assets/images/django.png" alt="Django" className="tech-icon" />
+                        </div>
+
                     </div>
+
+                    <p className="about-text">
+                        <br />
+                        Herramientas | Diseño:
+                    </p>
+                    <div className="tech-icons">
+                        <div className="tech-box">
+                            <img src="src/assets/images/photoshop.png" alt="Photoshop" className="tech-icon" />
+                        </div>
+
+                        <div className="tech-box">
+                            <img src="src/assets/images/figma.png" alt="Figma" className="tech-icon" />
+                        </div>
+                    </div>
+
                 </div>
 
-                {/* placeholder o después será una imagen */}
                 <div className="about-image-placeholder"></div>
             </Card>
         </section>
