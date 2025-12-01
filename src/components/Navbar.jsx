@@ -1,6 +1,7 @@
 import { useState } from "react";
 import LanguageToggle from "./LanguageToggle";
 import Card from "./Card";
+import logo from "../assets/images/logo_white.png";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -17,15 +18,15 @@ export default function Navbar() {
                 <div className="navbar-content">
 
                     <div className="logo">
-                        <a href="#" onClick={closeMenu}>
-                            <img src="src/assets/images/logo_white.png" alt="logo" />
+                        <a href="/" onClick={closeMenu}>
+                            <img src={logo} alt="logo" />
                         </a>
                     </div>
 
                     <nav className="navbar nav-desktop">
-                        <a href="#about" className="nav-link">Sobre mí</a>
-                        <a href="#projects" className="nav-link">Proyectos</a>
-                        <a href="#contact" className="nav-link">Contacto</a>
+                        <a href="/#about" className="nav-link">Sobre mí</a>
+                        <a href="/#projects" className="nav-link">Proyectos</a>
+                        <a href="/#contact" className="nav-link">Contacto</a>
                     </nav>
 
                     <div className="lang-desktop">
@@ -47,8 +48,8 @@ export default function Navbar() {
 
             <nav className={`nav-menu-mobile ${menuOpen ? "active" : ""}`}>
                 <div className="mobile-logo">
-                    <a href="#" onClick={closeMenu}>
-                        <img src="src/assets/images/logo_white.png" alt="logo" />
+                    <a href="/" onClick={closeMenu}>
+                        <img src={logo} alt="logo" />
                     </a>
                 </div>
 
@@ -57,9 +58,9 @@ export default function Navbar() {
                 </div>
 
                 <ul className="nav-menu">
-                    <li><a href="#about" onClick={closeMenu}>Sobre mí</a></li>
-                    <li><a href="#projects" onClick={closeMenu}>Proyectos</a></li>
-                    <li><a href="#contact" onClick={closeMenu}>Contacto</a></li>
+                    <li><a href="/#about" onClick={closeMenu}>Sobre mí</a></li>
+                    <li><a href="/#projects" onClick={closeMenu}>Proyectos</a></li>
+                    <li><a href="/#contact" onClick={closeMenu}>Contacto</a></li>
                 </ul>
 
                 <div className="mobile-lang-footer">

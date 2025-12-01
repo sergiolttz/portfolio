@@ -1,6 +1,25 @@
 import Card from "./Card";
+import TechIcons from "./TechIcons";
+
 
 export default function About() {
+    const devTools = [
+        { name: "HTML", image: "src/assets/images/html5.png" },
+        { name: "CSS", image: "src/assets/images/css.png" },
+        { name: "JavaScript", image: "src/assets/images/javascript.png" },
+        { name: "React", image: "src/assets/images/react.png" },
+        { name: "Python", image: "src/assets/images/python.png" },
+        { name: "Django", image: "src/assets/images/django.png" },
+        { name: "Wordpress", image: "src/assets/images/wordpress.png" }
+
+    ];
+
+    const designTools = [
+        { name: "Photoshop", image: "src/assets/images/photoshop.png" },
+        { name: "Figma", image: "src/assets/images/figma.png" }
+    ];
+
+
     return (
         <section id="about" className="section about-me-section">
             <h2>Sobre Mí</h2>
@@ -16,55 +35,19 @@ export default function About() {
                         <br />
                         Puedo desarrollar landing pages, sitios web completos, sistemas de componentes, interfaces limpias y accesibles, pequeñas aplicaciones interactivas y soluciones visuales que complementen un proyecto digital. También puedo diseñar piezas gráficas como banners, contenido para redes, identidades visuales, prototipos  y otros elementos que conecten el aspecto visual con la experiencia del usuario.
                     </p>
-                    <p className="about-text">
+                    <p className="about-text-tech">
                         <br />
                         Herramientas | Desarrollo Web:
                     </p>
-                    <div className="tech-icons">
+                    <TechIcons items={devTools} />
 
-                        <div className="tech-box">
-                            <img src="src/assets/images/html5.png" alt="HTML" className="tech-icon" />
-                        </div>
-
-                        <div className="tech-box">
-                            <img src="src/assets/images/css.png" alt="CSS" className="tech-icon" />
-                        </div>
-
-                        <div className="tech-box">
-                            <img src="src/assets/images/javascript.png" alt="JavaScript" className="tech-icon" />
-                        </div>
-
-                        <div className="tech-box">
-                            <img src="src/assets/images/react.png" alt="React" className="tech-icon" />
-                        </div>
-
-                        <div className="tech-box">
-                            <img src="src/assets/images/python.png" alt="Python" className="tech-icon" />
-                        </div>
-
-                        <div className="tech-box">
-                            <img src="src/assets/images/django.png" alt="Django" className="tech-icon" />
-                        </div>
-
-                    </div>
-
-                    <p className="about-text">
+                    <p className="about-text-tech">
                         <br />
                         Herramientas | Diseño:
                     </p>
-                    <div className="tech-icons">
-                        <div className="tech-box">
-                            <img src="src/assets/images/photoshop.png" alt="Photoshop" className="tech-icon" />
-                        </div>
-
-                        <div className="tech-box">
-                            <img src="src/assets/images/figma.png" alt="Figma" className="tech-icon" />
-                        </div>
-                    </div>
+                    <TechIcons items={designTools} />
 
                 </div>
-
-                <div className="about-image-placeholder"></div>
             </Card>
         </section>
     );

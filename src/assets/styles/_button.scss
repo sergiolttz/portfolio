@@ -21,10 +21,11 @@
 }
 
 .btn-primary:hover {
-    transform: translateZ(40px) scale(1.02);
+    transform: scale(1.02);
     background: $btn-bg-hover;
-    box-shadow: 0 0 20px rgba($color-primary, 0.35);
-        border: 1px solid $color-primary;
+    border: 1px solid $color-primary;
+    box-shadow: 0 0 20px $color-primary;
+
 }
 
 /* --- Ripple --- */

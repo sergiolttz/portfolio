@@ -1,0 +1,73 @@
+@use "variables" as *;
+.projectpage {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+
+    .projectpage-title {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .projectpage-description {
+        font-size: 1.1rem;
+        max-width: 700px;
+        margin: 0 auto 40px auto;
+        line-height: 1.6;
+        opacity: 0.9;
+    }
+
+    .projectpage-subtitle {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        font-size: 1.4rem;
+    }
+
+
+    .projectpage-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        margin-top: 70px;
+        margin-bottom: 80px;
+    }
+
+    .projectpage-card {
+        text-align: center;
+        padding: 40px;
+
+        h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            opacity: 0.9;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        img {
+            width: 100%;
+            max-width: 700px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .projectpage-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .projectpage {
+        .projectpage-card {
+            padding: 20px;
+        }
+    }
+}
