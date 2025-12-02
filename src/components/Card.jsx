@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export default function Card({ children, className = "", rotation = 2 }) {
+export default function Card({ children, className = "", rotation = 2, ...restProps }) {
     const cardRef = useRef(null);
     const contentRef = useRef(null);
 
@@ -52,7 +52,12 @@ export default function Card({ children, className = "", rotation = 2 }) {
     }, [rotation]);
 
     return (
-        <div ref={cardRef} className={`card ${className}`} data-rotation-factor={rotation}>
+        <div
+            ref={cardRef}
+            className={`card ${className}`}
+            data-rotation-factor={rotation}
+            {...restProps}
+        >
             <div ref={contentRef} className="card-content">
                 {children}
             </div>

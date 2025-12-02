@@ -16,12 +16,14 @@ export const projects = [
             {
                 title: "Landing page profesional para un servicio de limpieza residencial y comercial",
                 text: "JCleaners es una empresa dedicada a la limpieza residencial y comercial en Florida. Este proyecto consiste en una landing page moderna, clara y orientada a generar clientes potenciales.La página comunica de manera directa los servicios principales, las ventajas competitivas y la profesionalidad del equipo, destacando la confianza como pilar de la marca.",
-                image: "/src/assets/projects/JCleaners1.png"
+                image: "/src/assets/projects/JCleaners1.png",
+                video: "/src/assets/projects/JCleaners-demo1.mp4"
             },
             {
                 title: "Funcionalidades principales",
                 text: "El proyecto implementa un Diseño totalmente responsive, asegurando su correcta visualización en móviles, tabletas y desktop. La interfaz incluye un Modo claro/oscuro accesible mediante un toggle y estructurado mediante variables SASS. La base de estilo utiliza una Arquitectura SASS profesional que aprovecha variables, mixins, funciones, extends, bucles y condicionales, organizando el código en componentes modulares. La Hero section presenta un notable efecto parallax y la CTA principal. La Sección de servicios muestra tarjetas animadas al hacer scroll, complementada por una Galería de trabajos con grid flexible. Los Testimonios están dispuestos en tarjetas que incluyen foto, nombre y calificación. Para la comunicación directa, existe un Botón flotante de contacto con enlaces a WhatsApp, teléfono, Instagram y correo. La funcionalidad incluye un Formulario de contacto funcional con validación en Frontend. Finalmente, la experiencia visual se enriquece con animaciones suaves al hacer scroll en tarjetas, textos y elementos clave.",
-                image: "/src/assets/projects/JCleaners2.png"
+                image: "/src/assets/projects/JCleaners2.png",
+                video: "/src/assets/projects/JCleaners-demo2.mp4"
             }
         ],
 
@@ -45,12 +47,14 @@ export const projects = [
             {
                 title: "Plataforma web para descubrir, organizar y guardar recetas",
                 text: "TasteBook es una plataforma web que permite a los usuarios descubrir, guardar y organizar recetas de manera sencilla. Nace de una necesidad personal: aunque hoy existen miles de recetas en internet, están dispersas entre redes sociales, blogs, videos y notas sueltas. Quería crear un espacio que funcionara como un cuaderno digital, donde cada usuario pudiera almacenar sus recetas favoritas y explorar las de otros aficionados a la cocina.",
-                image: "/src/assets/projects/TasteBook1.png"
+                image: "/src/assets/projects/TasteBook1.png",
+                video: "/src/assets/projects/TasteBook-demo1.mp4"
             },
             {
                 title: "Funcionalidades principales",
                 text: "El proyecto es una aplicación web de gestión de recetas que ofrece una autenticación completa (registro, inicio de sesión estándar y social con Google/Facebook) para asegurar la plataforma. Permite a los usuarios subir recetas detalladas, incluyendo ingredientes, pasos e imágenes, facilitando el proceso con la creación dinámica de campos. Para la interacción, incluye una potente funcionalidad de búsqueda y un filtrado avanzado por múltiples categorías como comida del día, dieta, alergias, gastronomía, tipo de plato y dificultad. Además, los usuarios pueden calificar las recetas, guardarlas en favoritos e imprimirlas en un formato optimizado para cocina. El diseño fue desarrollado de forma responsive utilizando solo HTML, CSS y JavaScript puro, y el proyecto fue finalmente desplegado en PythonAnywhere.",
-                image: "/src/assets/projects/TasteBook2.png"
+                image: "/src/assets/projects/TasteBook2.png",
+                video: "/src/assets/projects/TasteBook-demo2.mp4"
             }
         ],
 
@@ -73,12 +77,15 @@ export const projects = [
             {
                 title: "Página web corporativa para una empresa de consultoría y análisis químico",
                 text: "Chemiconsult es una empresa dedicada a ofrecer servicios de consultoría y análisis químico en múltiples áreas: aguas, gases, crudos, elastómeros, cosméticos, alimentos, medicamentos y más. Atiende tanto a industrias petroleras como alimentarias, farmacéuticas, residenciales y otras organizaciones que requieren informes y análisis certificados.",
-                image: "/src/assets/projects/Chemiconsult1.png"
+                image: "/src/assets/projects/Chemiconsult1.png",
+                video: "/src/assets/projects/Chemiconsult-demo1.mp4"
             },
             {
                 title: "Funcionalidades principales",
                 text: "El proyecto web incluye una Página de inicio completa que integrará un Hero con llamada a la acción, servicios destacados, una sección \"Sobre nosotros\", las últimas entradas del blog y un área de contacto. Además, se desarrollarán secciones independientes clave para una navegación estructurada, a saber: Sobre nosotros, Servicios, Permisología, Contacto y Blog. Para la interacción con el usuario, se implementarán Formularios funcionales, específicamente un Formulario de contacto general y un Formulario directo de cotización. La gestión de contenido será sencilla para la empresa gracias a un Blog administrable que utiliza el editor Gutenberg. Todo el diseño garantizará una experiencia óptima en cualquier dispositivo con un Diseño responsive completo, mientras que la visibilidad en buscadores se asegurará mediante la Optimización SEO gestionada con el plugin Yoast. Finalmente, el contenido y la estética estarán alineados para proyectar profesionalismo y confianza, incluyendo una Redacción técnica precisa basada en la información proporcionada por los departamentos de la empresa, y una estructura visual limpia con imágenes optimizadas centrada en la credibilidad de la marca.",
-                image: "/src/assets/projects/Chemiconsult2.png"
+                image: "/src/assets/projects/Chemiconsult2.png",
+                video: "/src/assets/projects/Chemiconsult-demo2.mp4"
+
             }
         ],
 
@@ -126,7 +133,7 @@ export const projects = [
             {
                 title: "Publico objetivo y alcance del proyecto",
                 text: "El diseño se dirigió a clientes que requerían servicios de transporte confiables, a personas que deseaban contratar movilización personal y a negocios que buscaban apoyo logístico, manteniendo un tono profesional, claro y accesible. Dentro del alcance del proyecto, se creó el diseño del logo principal, sus variantes para redes sociales, publicaciones para Instagram y también historias animadas o videos breves para IG Stories. El mensaje principal de todas las piezas se centró en transmitir seguridad, puntualidad y responsabilidad, explicar los servicios clave de la empresa y construir una presencia visual coherente. A diferencia de otros proyectos, para este fue necesario desarrollar la identidad visual completa, lo que incluyó la definición de la paleta cromática, tipografías, recursos gráficos y el estilo visual específico para todos los posts e historias.",
-                image: "/src/assets/projects/JGlobal2.png"
+                image: "/src/assets/projects/JGlobal2.webp"
             }
         ],
     },
@@ -147,7 +154,7 @@ export const projects = [
                 image: "/src/assets/projects/Sport1.png"
             },
             {
-                title: "Publico objetivo y alcance del proyecto",
+                title: "Publico objetivo y alcance",
                 text: "El diseño integra estética profesional, impacto visual y una identidad clara que se adapta a distintos estilos y necesidades del cliente. Este trabajo reúne proyectos personales, colaboraciones con agencias, encargos privados y material creado para marcas y plataformas centradas en el deporte.",
                 image: "/src/assets/projects/Sport2.png"
             }

@@ -795,6 +795,9 @@ h3 {
   text-align: center;
   padding: 40px;
 }
+.projectpage .projectpage-card.has-video {
+  cursor: default;
+}
 .projectpage .projectpage-card h3 {
   font-size: 1.4rem;
   margin-bottom: 10px;
@@ -804,11 +807,40 @@ h3 {
   margin-bottom: 20px;
   line-height: 1.6;
 }
-.projectpage .projectpage-card img {
+.projectpage .projectpage-card .projectpage-card-image {
+  position: relative;
   width: 100%;
-  max-width: 700px;
+  margin: 0 auto;
+  padding-top: 56.25%;
+  overflow: hidden;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.projectpage .projectpage-card .media-element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 2;
+}
+.projectpage .projectpage-card .video-overlay {
+  z-index: 1;
+}
+.projectpage .projectpage-card .visible {
+  opacity: 1;
+  z-index: 5;
+}
+.projectpage .projectpage-card .hidden {
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.projectpage .projectpage-card img {
+  z-index: 3;
 }
 .projectpage .projectpage-buttons {
   display: flex;

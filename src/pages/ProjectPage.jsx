@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { projects } from "../data/projects";
+import { projects } from "../data/Projects";
 import TechIcons from "../components/TechIcons";
 import ProjectPageCard from "../components/ProjectPageCard";
 import Button from "../components/Button";
@@ -30,6 +30,7 @@ export default function ProjectPage() {
                         title={card.title}
                         text={card.text}
                         image={card.image}
+                        video={card.video}
                     />
                 ))}
             </div>
