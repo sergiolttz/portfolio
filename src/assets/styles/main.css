@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html {
   scroll-behavior: smooth;
 }
@@ -10,13 +9,13 @@ html {
 }
 
 body {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #ffffff;
   line-height: 1.6;
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;
-  background: radial-gradient(hsla(210, 93%, 23%, 0.2) 1px, transparent 0px), linear-gradient(160deg, #010b24, #010b24);
+  background: radial-gradient(rgba(4, 59, 113, 0.2) 1px, transparent 0px), linear-gradient(160deg, #010b24, #010b24);
   background-repeat: repeat, no-repeat;
   background-size: 30px 30px, cover;
 }
@@ -31,7 +30,6 @@ a:hover {
   color: #00bcd4;
 }
 
-/* --- Global Structure & Headings --- */
 .section {
   padding: 80px 10%;
   max-width: 1400px;
@@ -62,6 +60,13 @@ h3 {
   margin-bottom: 1rem;
 }
 
+p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  text-align: justify;
+}
+
 .btn-primary {
   padding: 0.7rem 1.4rem;
   background: rgba(255, 255, 255, 0.1019607843);
@@ -87,10 +92,9 @@ h3 {
   box-shadow: 0 0 20px #00bcd4;
 }
 
-/* --- Ripple --- */
 .ripple {
   position: absolute;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.3294117647);
   border-radius: 50%;
   transform: scale(0);
   animation: ripple 0.5s linear;
@@ -121,7 +125,6 @@ h3 {
   gap: 30px;
 }
 
-/* -------------------- LOGO -------------------- */
 .logo {
   display: flex;
   align-items: center;
@@ -140,7 +143,6 @@ h3 {
   transform: translateZ(10px);
 }
 
-/* -------------------- NAV DESKTOP -------------------- */
 .navbar {
   display: flex;
   align-items: center;
@@ -157,38 +159,6 @@ h3 {
   color: #00bcd4;
 }
 
-/* -------------------- LANGUAGE DESKTOP -------------------- */
-.language-toggle {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 4px;
-  border-radius: 8px;
-  transform: translateZ(10px);
-}
-.language-toggle .lang-btn {
-  padding: 6px 14px;
-  border-radius: 6px;
-  cursor: pointer;
-  border: none;
-  background: transparent;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #ffffff;
-  transition: all 0.25s ease;
-}
-.language-toggle .lang-btn.active {
-  background: #00bcd4;
-  color: #010b24;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
-  transform: translateY(-1px);
-}
-.language-toggle .lang-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
-}
-
-/* -------------------- HAMBURGER -------------------- */
 .hamburger {
   display: none;
   position: relative;
@@ -211,34 +181,19 @@ h3 {
   transition: transform 0.35s ease, opacity 0.25s ease;
 }
 
-/* --- Animación hamburguesa --- */
-.hamburger.is-active .bar:nth-child(1) {
-  transform: rotate(45deg) translateY(8px);
-}
-
-.hamburger.is-active .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.is-active .bar:nth-child(3) {
-  transform: rotate(-45deg) translateY(-8px);
-}
-
-/* --- Ocultar navbar cuando menú abierto --- */
 .hide-navbar {
   transform: translateY(-100%);
   opacity: 0;
   transition: transform 0.35s ease, opacity 0.3s ease;
 }
 
-/* -------------------- MENÚ MÓVIL -------------------- */
 .nav-menu-mobile {
   position: fixed;
   top: -100%;
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.176);
+  background-color: rgba(0, 0, 0, 0.1764705882);
   -webkit-backdrop-filter: blur(8px);
           backdrop-filter: blur(8px);
   display: flex;
@@ -295,28 +250,7 @@ h3 {
   gap: 12px;
   margin-top: 20px;
 }
-.nav-menu-mobile .lang-mobile .lang-btn {
-  padding: 8px 18px;
-  border-radius: 8px;
-  cursor: pointer;
-  border: none;
-  background: rgba(255, 255, 255, 0.08);
-  font-size: 1rem;
-  font-weight: 500;
-  color: #ffffff;
-  transition: all 0.25s ease;
-}
-.nav-menu-mobile .lang-mobile .lang-btn.active {
-  background: #00bcd4;
-  color: #010b24;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
-  transform: translateY(-1px);
-}
-.nav-menu-mobile .lang-mobile .lang-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
-}
 
-/* -------------------- RESPONSIVE -------------------- */
 @media (max-width: 1024px) {
   .hamburger {
     display: flex;
@@ -334,6 +268,41 @@ h3 {
     padding: 0 10px;
   }
 }
+.language-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1019607843);
+  padding: 4px;
+  border-radius: 8px;
+  transform: translateZ(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1019607843);
+  border-radius: 100px;
+}
+.language-toggle .lang-btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1019607843);
+  border-radius: 100px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1019607843);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+.language-toggle .lang-btn.active {
+  background: #00bcd4;
+  transform: translateY(-1px) scale(1.02);
+  border: 1px solid #00bcd4;
+}
+.language-toggle .lang-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-1px) scale(1.02);
+  border: 1px solid #00bcd4;
+  box-shadow: 0 0 20px #00bcd4;
+}
+
 .hero {
   min-height: 60vh;
   display: flex;
@@ -366,7 +335,6 @@ h3 {
   color: #ffffff;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .hero-content {
     padding: 0 15px;
@@ -410,8 +378,8 @@ h3 {
 .card {
   position: relative;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.031372549);
+  border: 1px solid rgba(255, 255, 255, 0.1019607843);
   box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -424,7 +392,7 @@ h3 {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.1019607843) 0%, transparent 50%);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -472,8 +440,8 @@ h3 {
 }
 .project-card h3 {
   margin-bottom: 0.5rem;
-  color: var(--primary-color);
-  font-weight: 400;
+  color: #00bcd4;
+  font-weight: 700;
   opacity: 0.8;
 }
 .project-card p {
@@ -615,7 +583,6 @@ h3 {
   perspective: 1000px;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
@@ -692,7 +659,6 @@ h3 {
   flex: 1;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .contact-section .contact-form .form-group-inline {
     flex-direction: column;
@@ -708,7 +674,6 @@ h3 {
   border-top: 1px solid rgba(255, 255, 255, 0.1019607843);
   position: relative;
   z-index: 5;
-  /* ---------------- SOCIAL LINKS ---------------- */
 }
 .footer .footer-logo img {
   height: 55px;
@@ -754,7 +719,6 @@ h3 {
   filter: none;
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
   .footer {
     flex-direction: column;
@@ -814,7 +778,7 @@ h3 {
   padding-top: 56.25%;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px 0 15px 30px -12px rgba(0, 0, 0, 0.5);
 }
 .projectpage .projectpage-card .media-element {
   position: absolute;

@@ -1,0 +1,38 @@
+@use "variables" as *;
+.language-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: $btn-bg;
+    padding: 4px;
+    border-radius: 8px;
+    transform: translateZ(10px);
+    border: 1px solid $color-border;
+    border-radius: 100px;
+
+    .lang-btn {
+        padding: 6px 14px;
+        border-radius: 6px;
+        cursor: pointer;
+        border: 1px solid $color-border;
+        border-radius: 100px;
+        color: $btn-text;
+        background: $btn-bg;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: all 0.25s ease;
+
+        &.active {
+            background: $color-primary;
+            transform: translateY(-1px) scale(1.02);
+            border: 1px solid $color-primary;
+        }
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-1px) scale(1.02);
+            border: 1px solid $color-primary;
+            box-shadow: 0 0 20px $color-primary;
+        }
+    }
+}

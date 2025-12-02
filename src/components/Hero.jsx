@@ -11,7 +11,11 @@ export default function Hero() {
                 </div>
                 <div className="hero-cta-block">
                     <p>{getText('hero_description')}</p>
-                    <Button>{getText('hero_button_cta')}</Button>
+                    <a href="#projects" className="btn-wrapper">
+                        <Button>
+                            {getText('hero_button_cta')}
+                        </Button>
+                    </a>
                 </div>
             </div>
         </section>

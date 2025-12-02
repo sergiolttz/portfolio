@@ -11,15 +11,14 @@ html {
 }
 
 body {
-    font-family: "Inter", Arial, sans-serif;
-    //background-color: $color-dark-bg;
+    font-family: $font-main;
     color: $color-text-light;
     line-height: 1.6;
     position: relative;
     min-height: 100vh;
     overflow-x: hidden;
     background:
-            radial-gradient(hsla(210, 93%, 23%, 0.2) 1px, transparent 0px),
+            radial-gradient($color-secondary-bg 1px, transparent 0px),
             linear-gradient(160deg, $color-dark-bg, $color-dark-bg);
     background-repeat: repeat, no-repeat;
     background-size: 30px 30px, cover;
@@ -35,7 +34,6 @@ a:hover {
     color: $color-primary;
 }
 
-/* --- Global Structure & Headings --- */
 .section {
     padding: 80px 10%;
     max-width: 1400px;
@@ -64,4 +62,11 @@ h3 {
     font-weight: 600;
     text-align: center;
     margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: $color-text-light;
+    text-align: justify;
 }
