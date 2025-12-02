@@ -2,8 +2,10 @@ import { useState } from "react";
 import LanguageToggle from "./LanguageToggle";
 import Card from "./Card";
 import logo from "../assets/images/logo_white.png";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Navbar() {
+    const { getText } = useLanguage();
     const [menuOpen, setMenuOpen] = useState(false);
 
     const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -24,9 +26,9 @@ export default function Navbar() {
                     </div>
 
                     <nav className="navbar nav-desktop">
-                        <a href="/#about" className="nav-link">Sobre mí</a>
-                        <a href="/#projects" className="nav-link">Proyectos</a>
-                        <a href="/#contact" className="nav-link">Contacto</a>
+                        <a href="/#about" className="nav-link">{getText('nav_about')}</a>
+                        <a href="/#projects" className="nav-link">{getText('nav_projects')}</a>
+                        <a href="/#contact" className="nav-link">{getText('nav_contact')}</a>
                     </nav>
 
                     <div className="lang-desktop">
@@ -35,7 +37,7 @@ export default function Navbar() {
 
                     <div
                         className={`hamburger ${menuOpen ? "is-active" : ""}`}
-                        aria-label="Abrir menú"
+                        aria-label={getText('nav_open_menu_aria')}
                         onClick={toggleMenu}
                     >
                         <span className="bar"></span>
@@ -53,14 +55,18 @@ export default function Navbar() {
                     </a>
                 </div>
 
-                <div className="close-menu" aria-label="Cerrar menú" onClick={closeMenu}>
+                <div
+                    className="close-menu"
+                    aria-label={getText('nav_close_menu_aria')}
+                    onClick={closeMenu}
+                >
                     &times;
                 </div>
 
                 <ul className="nav-menu">
-                    <li><a href="/#about" onClick={closeMenu}>Sobre mí</a></li>
-                    <li><a href="/#projects" onClick={closeMenu}>Proyectos</a></li>
-                    <li><a href="/#contact" onClick={closeMenu}>Contacto</a></li>
+                    <li><a href="/#about" onClick={closeMenu}>{getText('nav_about')}</a></li>
+                    <li><a href="/#projects" onClick={closeMenu}>{getText('nav_projects')}</a></li>
+                    <li><a href="/#contact" onClick={closeMenu}>{getText('nav_contact')}</a></li>
                 </ul>
 
                 <div className="mobile-lang-footer">

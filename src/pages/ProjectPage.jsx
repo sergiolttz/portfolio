@@ -1,39 +1,44 @@
 import { useParams, Link } from "react-router-dom";
-import { projects } from "../data/Projects";
+import { projects } from "../data/projects";
 import TechIcons from "../components/TechIcons";
 import ProjectPageCard from "../components/ProjectPageCard";
 import Button from "../components/Button";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function ProjectPage() {
+    const { getText } = useLanguage();
     const { slug } = useParams();
-
     const project = projects.find((p) => p.slug === slug);
+    const translatedTitle = getText(`${slug}_title`);
+    const translatedDescription = getText(`${slug}_description`);
+
 
     if (!project) {
         return (
             <section className="projectpage section">
-                <h2>Proyecto no encontrado</h2>
+                <h2>{getText('project_not_found')}</h2>
             </section>
         );
     }
 
     return (
         <section className="projectpage section">
-            <h1 className="projectpage-title">{project.title}</h1>
-            <p className="projectpage-description">{project.description}</p>
-            <h3 className="projectpage-tools-title">Herramientas utilizadas</h3>
+            <h1 className="projectpage-title">{translatedTitle}</h1>
+            <p className="projectpage-description">{translatedDescription}</p>
+            <h3 className="projectpage-tools-title">{getText('tools_title')}</h3>
             <TechIcons items={project.tools} className="projectpage-tools" />
             <div className="projectpage-cards">
                 {project.cards?.map((card, i) => (
                     <ProjectPageCard
                         key={i}
-                        title={card.title}
-                        text={card.text}
+                        titleKey={card.title}
+                        textKey={card.text}
                         image={card.image}
                         video={card.video}
                     />
                 ))}
             </div>
+
             <div className="projectpage-buttons">
                 {project.link && (
                     <a
@@ -43,7 +48,7 @@ export default function ProjectPage() {
                         className="btn-wrapper"
                     >
                         <Button>
-                            Ver Proyecto
+                            {getText('button_view_project')}
                         </Button>
                     </a>
                 )}
@@ -55,7 +60,7 @@ export default function ProjectPage() {
                         className="btn-wrapper"
                     >
                         <Button>
-                            Ver Repositorio
+                            {getText('button_view_repo')}
                         </Button>
                     </a>
                 )}

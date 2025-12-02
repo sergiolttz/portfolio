@@ -1,8 +1,17 @@
+// src/components/ProjectCard.jsx (ACTUALIZADO)
 import { Link } from "react-router-dom";
 import Card from "./Card";
 import Button from "./Button";
+import { useLanguage } from "../context/LanguageContext";
 
-export default function ProjectCard({ title, subtitle, description, slug, image }) {
+export default function ProjectCard({ slug, image }) {
+    const { getText } = useLanguage();
+
+    const title = getText(`${slug}_title`);
+    const subtitle = getText(`${slug}_subtitle`);
+    const description = getText(`${slug}_description`);
+    const buttonText = getText('project_card_button');
+
     return (
         <Card rotation={2} className="project-card">
 
@@ -16,7 +25,7 @@ export default function ProjectCard({ title, subtitle, description, slug, image 
 
             <div className="card-footer">
                 <Link to={`/project/${slug}`} className="card-button">
-                    <Button>Ver más</Button>
+                    <Button>{buttonText}</Button>
                 </Link>
                 <div className="card-icon">→</div>
             </div>

@@ -1,6 +1,8 @@
 import Button from "./Button";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Hero() {
+    const { getText } = useLanguage();
     return (
         <section className="hero">
             <div className="hero-content">
@@ -8,8 +10,8 @@ export default function Hero() {
                     <h1>Sergio Lattanzio</h1>
                 </div>
                 <div className="hero-cta-block">
-                    <p>Frontend Developer enfocado en construir interfaces modernas y centradas en el usuario.</p>
-                    <Button>Ver proyectos</Button>
+                    <p>{getText('hero_description')}</p>
+                    <Button>{getText('hero_button_cta')}</Button>
                 </div>
             </div>
         </section>

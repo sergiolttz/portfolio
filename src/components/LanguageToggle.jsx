@@ -1,24 +1,24 @@
-import { useState } from "react";
+import { useLanguage } from "../context/LanguageContext";
 
-export default function LanguageToggle({ variant = "desktop", onChange }) {
-    const [lang, setLang] = useState("es");
+export default function LanguageToggle({ variant = "desktop" }) {
+    const { language, setLanguage } = useLanguage();
+
 
     const handleChange = (value) => {
-        setLang(value);
-        onChange && onChange(value);
+        setLanguage(value);
     };
 
     return (
         <div className={`language-toggle ${variant}`}>
             <button
-                className={`lang-btn ${lang === "es" ? "active" : ""}`}
+                className={`lang-btn ${language === "es" ? "active" : ""}`}
                 onClick={() => handleChange("es")}
             >
                 ES
             </button>
 
             <button
-                className={`lang-btn ${lang === "en" ? "active" : ""}`}
+                className={`lang-btn ${language === "en" ? "active" : ""}`}
                 onClick={() => handleChange("en")}
             >
                 EN
