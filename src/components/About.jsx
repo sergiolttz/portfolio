@@ -31,6 +31,10 @@ export default function About() {
                         <br />
                         {getText('about_p2')}
                     </p>
+                    <p className="about-text">
+                        <br />
+                        {getText('about_p3')}
+                    </p>
                     <p className="about-text-tech">
                         <br />
                         {getText('about_tools_dev')}

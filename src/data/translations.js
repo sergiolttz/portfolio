@@ -143,12 +143,16 @@ export const texts = {
         en: "About Me",
     },
     about_p1: {
-        es: "Soy desarrollador frontend con experiencia creando interfaces y piezas visuales para proyectos web y digitales. Me gusta trabajar en la intersección del diseño y el código, construyendo experiencias claras, funcionales y visualmente consistentes. Me motiva transformar ideas en productos reales, cuidar los detalles y pensar en cómo las personas interactúan con cada elemento. Disfruto crear sitios web modernos, identidades visuales para proyectos y soluciones digitales que se sientan intuitivas y bien pensadas que no solo se vean bien, sino que realmente faciliten la experiencia del usuario.",
-        en: "I'm a frontend developer with experience creating interfaces and visual assets for web and digital projects. I enjoy working at the intersection of design and code, building clear, functional, and visually consistent experiences. I am motivated to transform ideas into real products, paying attention to detail and considering how people interact with every element. I enjoy creating modern websites, visual identities for projects, and digital solutions that feel intuitive and well-thought-out, not only looking good but truly facilitating the user experience.",
+        es: "Soy desarrollador frontend consolidando mi experiencia en la creación de interfaces y piezas visuales para proyectos digitales. Me interesa trabajar en la intersección del diseño y el código, explorando cómo construir experiencias claras, organizadas y visualmente agradables.",
+        en: "I’m a frontend developer currently strengthening my skills in building interfaces and creating visual assets for digital projects. I enjoy working at the intersection of design and code, exploring how to build clear, organized, and visually pleasant experiences.",
     },
     about_p2: {
-        es: "Puedo desarrollar landing pages, sitios web completos, sistemas de componentes, interfaces limpias y accesibles, pequeñas aplicaciones interactivas y soluciones visuales que complementen un proyecto digital. También puedo diseñar piezas gráficas como banners, contenido para redes, identidades visuales, prototipos y otros elementos que conecten el aspecto visual con la experiencia del usuario.",
-        en: "I can develop landing pages, full websites, component systems, clean and accessible interfaces, small interactive applications, and visual solutions that complement a digital project. I can also design graphic pieces such as banners, social media content, visual identities, prototypes, and other elements that connect the visual aspect with the user experience.",
+        es: "Mi enfoque está en aprender, mejorar y convertir ideas en productos funcionales. Me gusta cuidar la estructura, la coherencia visual y pensar en cómo las personas interactúan con cada elemento, incluso en proyectos pequeños.",
+        en: "My focus is on learning, improving, and turning ideas into functional products. I pay attention to structure, visual consistency, and how people interact with each element, even in small projects.",
+    },
+    about_p3: {
+        es: "Puedo desarrollar landing pages, sitios web, componentes reutilizables e interfaces responsivas, así como crear piezas gráficas para redes sociales, identidades visuales iniciales, maquetas y otros materiales que complementen un proyecto digital. Aún estoy creciendo profesionalmente, pero cada proyecto ha fortalecido mis habilidades y mi forma de abordar el diseño y el desarrollo de manera conjunta.",
+        en: "I can develop landing pages, basic websites, reusable components, and responsive interfaces, as well as create simple graphic pieces for social media, initial visual identities, mockups, and other materials that support a digital project. I’m still growing professionally, but each project has helped strengthen my skills and shape the way I approach design and development together.",
     },
     about_tools_dev: {
         es: "Herramientas | Desarrollo Web:",
