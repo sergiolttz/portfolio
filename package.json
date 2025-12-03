@@ -1,7 +1,7 @@
 {
+  "homepage": "https://sergiolttz.github.io/portfolio",
   "name": "portafolio",
   "private": true,
-  "homepage": "https://sergiolttz.github.io/portfolio",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
