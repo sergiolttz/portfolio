@@ -8,10 +8,12 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import ProjectPage from "./pages/ProjectPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   return (
     <>
+      <ScrollToTop />
       <Blob />
       <Navbar />
 
