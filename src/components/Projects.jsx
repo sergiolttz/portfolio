@@ -3,15 +3,15 @@ import { useLanguage } from "../context/LanguageContext";
 
 
 const devProjectsData = [
-    { slug: "JCleaners", image: "src/assets/projects/jcleaners.png" },
-    { slug: "TasteBook", image: "src/assets/projects/tastebook.png" },
-    { slug: "Chemiconsult", image: "src/assets/projects/chemiconsult.png" },
+    { slug: "JCleaners", image: "/projects/jcleaners.png" },
+    { slug: "TasteBook", image: "/projects/tastebook.png" },
+    { slug: "Chemiconsult", image: "/projects/chemiconsult.png" },
 ];
 
 const designProjectsData = [
-    { slug: "Sport", image: "src/assets/projects/sport.png" },
-    { slug: "Movida", image: "src/assets/projects/movida.png" },
-    { slug: "JGlobal", image: "src/assets/projects/jglobal.png" },
+    { slug: "Sport", image: "/projects/sport.png" },
+    { slug: "Movida", image: "/projects/movida.png" },
+    { slug: "JGlobal", image: "/projects/jglobal.png" },
 ];
 
 

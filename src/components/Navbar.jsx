@@ -1,14 +1,12 @@
 import { useState, useEffect } from "react";
 import LanguageToggle from "./LanguageToggle";
 import Card from "./Card";
-import logo from "../assets/images/logo_white.png";
 import { useLanguage } from "../context/LanguageContext";
 
 export default function Navbar() {
     const { getText } = useLanguage();
     const [menuOpen, setMenuOpen] = useState(false);
     
-    // Estados para controlar el scroll
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -37,7 +35,7 @@ export default function Navbar() {
         return () => {
             window.removeEventListener('scroll', controlNavbar);
         };
-    }, [lastScrollY]);
+    }, [lastScrollY, menuOpen]);
 
     return (
         <header className={`header ${!isVisible ? "header--hidden" : ""}`}>
@@ -49,7 +47,7 @@ export default function Navbar() {
 
                     <div className="logo">
                         <a href="/" onClick={closeMenu}>
-                            <img src={logo} alt="logo" />
+                            <img src="/images/logo_white.png" alt="logo" />
                         </a>
                     </div>
 
@@ -79,7 +77,7 @@ export default function Navbar() {
             <nav className={`nav-menu-mobile ${menuOpen ? "active" : ""}`}>
                 <div className="mobile-logo">
                     <a href="/" onClick={closeMenu}>
-                        <img src={logo} alt="logo" />
+                        <img src="/images/logo_white.png" alt="logo" />
                     </a>
                 </div>
 

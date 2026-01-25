@@ -5,17 +5,18 @@ import { useLanguage } from "../context/LanguageContext";
 export default function About() {
     const { getText } = useLanguage();
     const devTools = [
-        { name: "HTML", image: "src/assets/images/html5.png" },
-        { name: "CSS", image: "src/assets/images/css.png" },
-        { name: "JavaScript", image: "src/assets/images/javascript.png" },
-        { name: "React", image: "src/assets/images/react.png" },
-        { name: "Python", image: "src/assets/images/python.png" },
-        { name: "Django", image: "src/assets/images/django.png" },
-        { name: "Wordpress", image: "src/assets/images/wordpress.png" }
+        { name: "HTML", image: "/images/html5.png" },
+        { name: "CSS", image: "/images/css.png" },
+        { name: "JavaScript", image: "/images/javascript.png" },
+        { name: "React", image: "/images/react.png" },
+        { name: "Python", image: "/images/python.png" },
+        { name: "Django", image: "/images/django.png" },
+        { name: "Wordpress", image: "/images/wordpress.png" }
     ];
+
     const designTools = [
-        { name: "Photoshop", image: "src/assets/images/photoshop.png" },
-        { name: "Figma", image: "src/assets/images/figma.png" }
+        { name: "Photoshop", image: "/images/photoshop.png" },
+        { name: "Figma", image: "/images/figma.png" }
     ];
 
 
