@@ -1,11 +1,22 @@
 @use "variables" as *;
 
+// Asegurémonos de que la SECCIÓN que contiene todo esté centrada
+.projects-section {
+    // O como se llame tu <section> de proyectos
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden; // Evita scroll horizontal accidental
+}
+
 .projects-category {
     font-size: 1.5rem;
     font-weight: 600;
     color: $color-primary;
     text-align: center;
     margin-bottom: 30px;
+    width: 100%;
 }
 
 .projects-grid {
@@ -14,13 +25,32 @@
     gap: 30px;
     margin-bottom: 50px;
     perspective: 1000px;
+    width: 100%;
+    justify-content: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-        max-width: 450px;
-        margin: 0 auto;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important; // Centra los hijos
+        justify-content: center !important;
+
+        width: 100vw !important; // Fuerza el ancho de la ventana
+        margin-left: calc(-50vw + 50%); // Truco para romper contenedores padres limitados
+        margin-right: calc(-50vw + 50%);
+        padding: 0;
+    }
+
+    // El componente que vemos en la imagen (la tarjeta oscura)
+    // Usamos el selector de clase que parece tener tu componente Card
+    .navbar-container,
+    .project-card,
+    [class*="card"] {
+        width: 90% !important;
+        max-width: 400px !important;
+        margin: 0 auto !important; // Obliga a estar en el centro
+        left: 0 !important;
+        right: 0 !important;
     }
 }

@@ -2,15 +2,25 @@
 
 .header {
     padding: 20px 0;
-    position: sticky;
+    // Cambiado a fixed para que el transform no afecte al flujo del documento
+    position: fixed;
     top: 0;
-    z-index: 100;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    // Transición suave para el movimiento
+    transition: transform 0.4s ease-in-out;
+
+    // Clase que se activa desde React al hacer scroll hacia abajo
+    &--hidden {
+        transform: translateY(-100%);
+    }
 
     .navbar-container {
         max-width: 800px;
         margin: 0 auto;
-        
-        .navbar-content  {
+
+        .navbar-content {
             padding: 10px 30px;
             display: flex;
             align-items: center;
@@ -80,15 +90,18 @@
     }
 }
 
+// Nota: Mantengo esta clase por si la usas en el toggle del menú, 
+// pero la navegación principal ahora usa .header--hidden
 .hide-navbar {
     transform: translateY(-100%);
     opacity: 0;
     transition: transform 0.35s ease, opacity 0.3s ease;
 }
 
+
 .nav-menu-mobile {
     position: fixed;
-    top: -100%;
+    top: 0; // Lo dejamos en 0
     left: 0;
     width: 100%;
     height: 100vh;
@@ -96,14 +109,23 @@
     backdrop-filter: blur(8px);
     display: flex;
     flex-direction: column;
+    
+    // Cambiamos la forma de ocultarlo:
+    // En lugar de top: -100%, usamos transform y opacity
+    transform: translateY(-100%); 
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.4s ease, opacity 0.3s ease, visibility 0.3s;
+    z-index: 10000;
     justify-content: flex-start;
     align-items: center;
     padding-top: 60px;
     transition: top 0.35s ease;
-    z-index: 10000;
 
     &.active {
-        top: 0;
+        transform: translateY(0); // Baja a su posición original
+        opacity: 1;
+        visibility: visible;
     }
 
     .mobile-logo {
@@ -150,11 +172,12 @@
         justify-content: center;
         padding-bottom: 20px;
     }
-        .lang-mobile {
-            display: flex;
-            gap: 12px;
-            margin-top: 20px;
-        }
+
+    .lang-mobile {
+        display: flex;
+        gap: 12px;
+        margin-top: 20px;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -167,8 +190,9 @@
         display: none !important;
     }
 
+    // Ajuste para centrar logo en mobile si el hamburger está a un lado
     .logo {
-        margin: 0 auto;
+        margin: 0;
     }
 
     .navbar-container {

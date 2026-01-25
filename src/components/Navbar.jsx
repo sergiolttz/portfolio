@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import LanguageToggle from "./LanguageToggle";
 import Card from "./Card";
 import logo from "../assets/images/logo_white.png";
@@ -7,12 +7,40 @@ import { useLanguage } from "../context/LanguageContext";
 export default function Navbar() {
     const { getText } = useLanguage();
     const [menuOpen, setMenuOpen] = useState(false);
+    
+    // Estados para controlar el scroll
+    const [isVisible, setIsVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
 
     const toggleMenu = () => setMenuOpen(!menuOpen);
     const closeMenu = () => setMenuOpen(false);
 
+    useEffect(() => {
+        const controlNavbar = () => {
+            if (typeof window !== 'undefined') {
+                if (menuOpen) {
+                    setIsVisible(true);
+                    return;
+                }
+
+                if (window.scrollY > lastScrollY && window.scrollY > 100) {
+                    setIsVisible(false);
+                } else {
+                    setIsVisible(true);
+                }
+                setLastScrollY(window.scrollY);
+            }
+        };
+
+        window.addEventListener('scroll', controlNavbar);
+
+        return () => {
+            window.removeEventListener('scroll', controlNavbar);
+        };
+    }, [lastScrollY]);
+
     return (
-        <header className="header">
+        <header className={`header ${!isVisible ? "header--hidden" : ""}`}>
             <Card
                 className={`navbar-container ${menuOpen ? "hide-navbar" : ""}`}
                 rotation={2}
