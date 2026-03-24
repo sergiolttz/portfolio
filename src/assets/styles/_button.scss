@@ -43,3 +43,34 @@
         opacity: 0;
     }
 }
+
+.btn-back-floating {
+    display: none;
+
+    @media (max-width: 768px) {
+        display: flex;
+        position: fixed;
+        top: 25px;
+        left: 20px;
+        z-index: 9999;
+        display: flex;
+        width: 45px;
+        height: 45px;
+        border-radius: 50% !important;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(-150%);
+        transition: transform 0.4s ease-in-out, opacity 0.3s ease;
+        opacity: 0;
+
+        &.btn-back--visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        svg {
+            min-width: 26px;
+            min-height: 26px;
+        }
+    }
+}

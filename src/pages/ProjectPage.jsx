@@ -4,6 +4,7 @@ import TechIcons from "../components/TechIcons";
 import ProjectPageCard from "../components/ProjectPageCard";
 import Button from "../components/Button";
 import { useLanguage } from "../context/LanguageContext";
+import BackButton from "../components/BackButton";
 
 export default function ProjectPage() {
     const { getText } = useLanguage();
@@ -23,6 +24,7 @@ export default function ProjectPage() {
 
     return (
         <section className="projectpage section">
+            <BackButton />
             <h1 className="projectpage-title">{translatedTitle}</h1>
             <p className="projectpage-description">{translatedDescription}</p>
             <h3 className="projectpage-tools-title">{getText('tools_title')}</h3>
