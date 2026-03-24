@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
-export default function Card({ children, className = "", rotation = 2, ...restProps }) {
+export default function Card({ children, className = "", rotation = 2, delay = 0, ...restProps }) {
     const cardRef = useRef(null);
     const contentRef = useRef(null);
 
@@ -37,7 +38,7 @@ export default function Card({ children, className = "", rotation = 2, ...restPr
                 content.style.transform = "rotateX(0) rotateY(0)";
                 content.style.transition = "transform 0.5s ease";
                 setTimeout(() => {
-                    content.style.transition = "";
+                    if (content) content.style.transition = "";
                 }, 500);
             };
 
@@ -52,15 +53,21 @@ export default function Card({ children, className = "", rotation = 2, ...restPr
     }, [rotation]);
 
     return (
-        <div
+        <motion.div
             ref={cardRef}
             className={`card ${className}`}
             data-rotation-factor={rotation}
+            
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: delay }}
+
             {...restProps}
         >
             <div ref={contentRef} className="card-content">
                 {children}
             </div>
-        </div>
+        </motion.div>
     );
 }

@@ -25,14 +25,14 @@ export default function Projects() {
             <h3 className="projects-category">{getText('projects_category_dev')}</h3>
             <div className="projects-grid">
                 {devProjectsData.map((p, i) => (
-                    <ProjectCard key={i} {...p} />
+                    <ProjectCard key={i} {...p} delay={i * 0.1} />
                 ))}
             </div>
 
             <h3 className="projects-category">{getText('projects_category_design')}</h3>
             <div className="projects-grid">
                 {designProjectsData.map((p, i) => (
-                    <ProjectCard key={i} {...p} />
+                    <ProjectCard key={i} {...p} delay={i * 0.1} />
                 ))}
             </div>
         </section>
