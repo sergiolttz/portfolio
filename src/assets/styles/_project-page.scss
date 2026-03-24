@@ -1,54 +1,65 @@
 @use "variables" as *;
 
 .projectpage {
-    padding: 250px 20px;
-    max-width: 900px;
+    // Reducimos el padding de 250px a 120px para alinearlo con el estilo del Hero
+    padding: 120px 20px 80px 20px;
+    max-width: 1000px; // Un poco más ancho para que las tarjetas de detalle luzcan mejor
     margin: 0 auto;
     text-align: center;
+    min-height: 100vh;
 
     .projectpage-title {
-        font-size: 2.5rem;
+        font-size: 3.5rem; // Tamaño impacto tipo Hero
+        font-weight: 800;
         margin-bottom: 20px;
+        line-height: 1.1;
+        color: $color-text-light;
     }
 
     .projectpage-description {
-        font-size: 1.1rem;
-        max-width: 700px;
-        margin: 0 auto 40px auto;
-        line-height: 1.6;
-        opacity: 0.9;
+        font-size: 1.2rem;
+        max-width: 750px;
+        margin: 0 auto 50px auto;
+        line-height: 1.7;
+        opacity: 0.8;
     }
 
-    .projectpage-subtitle {
-        margin-top: 40px;
-        margin-bottom: 20px;
-        font-size: 1.4rem;
+    .projectpage-tools-title {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 25px;
+        opacity: 0.6;
     }
 
     .projectpage-cards {
         display: flex;
         flex-direction: column;
-        gap: 60px;
-        margin-top: 70px;
+        gap: 80px;
+        margin-top: 60px;
         margin-bottom: 80px;
     }
 
     .projectpage-card {
         text-align: center;
-        padding: 40px;
+        padding: 50px;
+        width: 100%;
+        max-width: 850px;
+        margin: 0 auto;
 
         &.has-video {
             cursor: default;
         }
 
         h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: $color-primary;
         }
 
         p {
             opacity: 0.9;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             line-height: 1.6;
         }
 
@@ -58,8 +69,8 @@
             margin: 0 auto;
             padding-top: 56.25%;
             overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px $card-shadow;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
         }
 
         .media-element {
@@ -69,12 +80,12 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: opacity 0.3s ease-in-out;
+            transition: opacity 0.4s ease-in-out;
             z-index: 2;
         }
 
         .video-overlay {
-            z-index: 1; 
+            z-index: 1;
         }
 
         .visible {
@@ -89,25 +100,58 @@
         }
 
         img {
-            z-index: 3; 
+            z-index: 3;
         }
-
-
-
     }
 
     .projectpage-buttons {
         display: flex;
         justify-content: center;
-        gap: 20px;
+        gap: 25px;
         margin-top: 40px;
     }
 }
 
 @media (max-width: 768px) {
     .projectpage {
+        padding-top: 150px;
+        padding-bottom: 60px;
+
+        .projectpage-title {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            margin-top: 20px;
+        }
+
+        .projectpage-description {
+            font-size: 1.05rem;
+            margin-bottom: 40px;
+            padding: 0 10px;
+        }
+
+        .projectpage-cards {
+            gap: 50px;
+        }
+
         .projectpage-card {
             padding: 20px;
+            width: 92%;
+            margin: 0 auto;
+        }
+
+        .projectpage-buttons {
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+            padding: 0 20px;
+
+            .btn-wrapper {
+                width: 100%;
+
+                button {
+                    width: 100%; 
+                }
+            }
         }
     }
 }

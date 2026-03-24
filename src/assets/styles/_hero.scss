@@ -1,11 +1,11 @@
 @use "variables" as *;
 
 .hero {
-    min-height: 60vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0;
+    padding-top: 120px;
     margin: 0 auto;
     text-align: center;
     position: relative;
@@ -22,6 +22,7 @@
         z-index: 10;
 
         .hero-title-block {
+            margin-bottom: 20px;
             h1 {
                 font-size: 4rem;
                 font-weight: 800;
@@ -34,13 +35,24 @@
                 margin-bottom: 30px;
                 font-size: 1.1rem;
                 color: $color-text-light;
+                max-width: 600px;
+                text-align: center;
             }
         }
     }
 }
 
 @media (max-width: 768px) {
+    .hero {
+        padding-top: 100px;
+        min-height: 70vh;
+    }
+
     .hero-content {
         padding: 0 15px;
+
+        .hero-title-block h1 {
+            font-size: 2.5rem;
+        }
     }
 }
