@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import Card from "./Card";
-import { useLanguage } from "../context/LanguageContext"; // Importamos el hook
+import { useLanguage } from "../context/LanguageContext";
 
 export default function ProjectPageCard({ titleKey, textKey, image, video }) {
     const { getText } = useLanguage();

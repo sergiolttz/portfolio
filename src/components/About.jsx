@@ -2,21 +2,24 @@ import Card from "./Card";
 import TechIcons from "./TechIcons";
 import { useLanguage } from "../context/LanguageContext";
 
+const baseUrl = import.meta.env.BASE_URL;
+
+
 export default function About() {
     const { getText } = useLanguage();
     const devTools = [
-        { name: "HTML", image: "/images/html5.png" },
-        { name: "CSS", image: "/images/css.png" },
-        { name: "JavaScript", image: "/images/javascript.png" },
-        { name: "React", image: "/images/react.png" },
-        { name: "Python", image: "/images/python.png" },
-        { name: "Django", image: "/images/django.png" },
-        { name: "Wordpress", image: "/images/wordpress.png" }
+        { name: "HTML", image: `${baseUrl}/images/html5.png` },
+        { name: "CSS", image: `${baseUrl}/images/css.png` },
+        { name: "JavaScript", image: `${baseUrl}/images/javascript.png` },
+        { name: "React", image: `${baseUrl}/images/react.png` },
+        { name: "Python", image: `${baseUrl}/images/python.png` },
+        { name: "Django", image: `${baseUrl}/images/django.png` },
+        { name: "Wordpress", image: `${baseUrl}/images/wordpress.png` }
     ];
 
     const designTools = [
-        { name: "Photoshop", image: "/images/photoshop.png" },
-        { name: "Figma", image: "/images/figma.png" }
+        { name: "Photoshop", image: `${baseUrl}/images/photoshop.png` },
+        { name: "Figma", image: `${baseUrl}/images/figma.png` }
     ];
 
 

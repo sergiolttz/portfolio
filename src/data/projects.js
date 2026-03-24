@@ -1,4 +1,6 @@
-export const projects = [
+const baseUrl = import.meta.env.BASE_URL;
+
+export const rawProjects = [
     {
         slug: "JCleaners",
         title: "JCleaners",
@@ -154,3 +156,20 @@ export const projects = [
         ],
     }
 ];
+
+const formatPaths = (data) => {
+    return data.map(project => ({
+        ...project,
+        tools: project.tools?.map(tool => ({
+            ...tool,
+            image: tool.image ? `${baseUrl}${tool.image.replace(/^\//, '')}` : tool.image
+        })),
+        cards: project.cards?.map(card => ({
+            ...card,
+            image: card.image ? `${baseUrl}${card.image.replace(/^\//, '')}` : card.image,
+            video: card.video ? `${baseUrl}${card.video.replace(/^\//, '')}` : card.video
+        }))
+    }));
+};
+
+export const projects = formatPaths(rawProjects);

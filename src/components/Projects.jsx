@@ -1,19 +1,19 @@
 import ProjectCard from "./ProjectCard";
 import { useLanguage } from "../context/LanguageContext"; 
 
+const baseUrl = import.meta.env.BASE_URL;
 
 const devProjectsData = [
-    { slug: "JCleaners", image: "/projects/jcleaners.png" },
-    { slug: "TasteBook", image: "/projects/tastebook.png" },
-    { slug: "Chemiconsult", image: "/projects/chemiconsult.png" },
+    { slug: "JCleaners", image: `${baseUrl}projects/jcleaners.png` },
+    { slug: "TasteBook", image: `${baseUrl}projects/tastebook.png` },
+    { slug: "Chemiconsult", image: `${baseUrl}projects/chemiconsult.png` },
 ];
 
 const designProjectsData = [
-    { slug: "Sport", image: "/projects/sport.png" },
-    { slug: "Movida", image: "/projects/movida.png" },
-    { slug: "JGlobal", image: "/projects/jglobal.png" },
+    { slug: "Sport", image: `${baseUrl}projects/sport.png` },
+    { slug: "Movida", image: `${baseUrl}projects/movida.png` },
+    { slug: "JGlobal", image: `${baseUrl}projects/jglobal.png` },
 ];
-
 
 export default function Projects() {
     const { getText } = useLanguage();

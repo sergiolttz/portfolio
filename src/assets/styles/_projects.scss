@@ -33,23 +33,21 @@
     .projects-grid {
         display: flex !important;
         flex-direction: column !important;
-        align-items: center !important; // Centra los hijos
+        align-items: center !important;
         justify-content: center !important;
 
-        width: 100vw !important; // Fuerza el ancho de la ventana
-        margin-left: calc(-50vw + 50%); // Truco para romper contenedores padres limitados
+        width: 100vw !important;
+        margin-left: calc(-50vw + 50%); 
         margin-right: calc(-50vw + 50%);
         padding: 0;
     }
 
-    // El componente que vemos en la imagen (la tarjeta oscura)
-    // Usamos el selector de clase que parece tener tu componente Card
     .navbar-container,
     .project-card,
     [class*="card"] {
         width: 90% !important;
         max-width: 400px !important;
-        margin: 0 auto !important; // Obliga a estar en el centro
+        margin: 0 auto !important; 
         left: 0 !important;
         right: 0 !important;
     }

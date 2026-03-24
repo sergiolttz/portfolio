@@ -1,4 +1,3 @@
-// src/components/ProjectCard.jsx (ACTUALIZADO)
 import { Link } from "react-router-dom";
 import Card from "./Card";
 import Button from "./Button";

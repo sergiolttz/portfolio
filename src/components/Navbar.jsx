@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; 
+import { HashLink } from 'react-router-hash-link'; 
 import LanguageToggle from "./LanguageToggle";
 import Card from "./Card";
 import { useLanguage } from "../context/LanguageContext";
@@ -6,9 +8,10 @@ import { useLanguage } from "../context/LanguageContext";
 export default function Navbar() {
     const { getText } = useLanguage();
     const [menuOpen, setMenuOpen] = useState(false);
-    
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
+
+    const baseUrl = import.meta.env.BASE_URL;
 
     const toggleMenu = () => setMenuOpen(!menuOpen);
     const closeMenu = () => setMenuOpen(false);
@@ -20,7 +23,6 @@ export default function Navbar() {
                     setIsVisible(true);
                     return;
                 }
-
                 if (window.scrollY > lastScrollY && window.scrollY > 100) {
                     setIsVisible(false);
                 } else {
@@ -29,16 +31,13 @@ export default function Navbar() {
                 setLastScrollY(window.scrollY);
             }
         };
-
         window.addEventListener('scroll', controlNavbar);
-
-        return () => {
-            window.removeEventListener('scroll', controlNavbar);
-        };
+        return () => window.removeEventListener('scroll', controlNavbar);
     }, [lastScrollY, menuOpen]);
 
     return (
-        <header className={`header ${!isVisible ? "header--hidden" : ""}`}>
+        <header className={`header ${!isVisible ? "header--hidden" : ""}`}> 
+            
             <Card
                 className={`navbar-container ${menuOpen ? "hide-navbar" : ""}`}
                 rotation={2}
@@ -46,15 +45,21 @@ export default function Navbar() {
                 <div className="navbar-content">
 
                     <div className="logo">
-                        <a href="/" onClick={closeMenu}>
-                            <img src="/images/logo_white.png" alt="logo" />
-                        </a>
+                        <HashLink smooth to="/#top" onClick={closeMenu}>
+                            <img src={`${baseUrl}images/logo_white.png`} alt="logo" />
+                        </HashLink>
                     </div>
 
                     <nav className="navbar nav-desktop">
-                        <a href="/#about" className="nav-link">{getText('nav_about')}</a>
-                        <a href="/#projects" className="nav-link">{getText('nav_projects')}</a>
-                        <a href="/#contact" className="nav-link">{getText('nav_contact')}</a>
+                        <HashLink smooth to="/#about" className="nav-link">
+                            {getText('nav_about')}
+                        </HashLink>
+                        <HashLink smooth to="/#projects" className="nav-link">
+                            {getText('nav_projects')}
+                        </HashLink>
+                        <HashLink smooth to="/#contact" className="nav-link">
+                            {getText('nav_contact')}
+                        </HashLink>
                     </nav>
 
                     <div className="lang-desktop">
@@ -76,9 +81,9 @@ export default function Navbar() {
 
             <nav className={`nav-menu-mobile ${menuOpen ? "active" : ""}`}>
                 <div className="mobile-logo">
-                    <a href="/" onClick={closeMenu}>
-                        <img src="/images/logo_white.png" alt="logo" />
-                    </a>
+                    <HashLink smooth to="/#top" onClick={closeMenu}>
+                        <img src={`${baseUrl}images/logo_white.png`} alt="logo" />
+                    </HashLink>
                 </div>
 
                 <div
@@ -90,9 +95,21 @@ export default function Navbar() {
                 </div>
 
                 <ul className="nav-menu">
-                    <li><a href="/#about" onClick={closeMenu}>{getText('nav_about')}</a></li>
-                    <li><a href="/#projects" onClick={closeMenu}>{getText('nav_projects')}</a></li>
-                    <li><a href="/#contact" onClick={closeMenu}>{getText('nav_contact')}</a></li>
+                    <li>
+                        <HashLink smooth to="/#about" onClick={closeMenu}>
+                            {getText('nav_about')}
+                        </HashLink>
+                    </li>
+                    <li>
+                        <HashLink smooth to="/#projects" onClick={closeMenu}>
+                            {getText('nav_projects')}
+                        </HashLink>
+                    </li>
+                    <li>
+                        <HashLink smooth to="/#contact" onClick={closeMenu}>
+                            {getText('nav_contact')}
+                        </HashLink>
+                    </li>
                 </ul>
 
                 <div className="mobile-lang-footer">
