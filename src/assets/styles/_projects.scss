@@ -1,13 +1,11 @@
 @use "variables" as *;
 
-// Asegurémonos de que la SECCIÓN que contiene todo esté centrada
 .projects-section {
-    // O como se llame tu <section> de proyectos
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-x: hidden; // Evita scroll horizontal accidental
+    overflow-x: hidden;
 }
 
 .projects-category {
@@ -34,21 +32,13 @@
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        justify-content: center !important;
-
-        width: 100vw !important;
-        margin-left: calc(-50vw + 50%); 
-        margin-right: calc(-50vw + 50%);
+        width: 100% !important; 
+        margin: 0;
         padding: 0;
     }
 
-    .navbar-container,
-    .project-card,
-    [class*="card"] {
-        width: 90% !important;
-        max-width: 400px !important;
-        margin: 0 auto !important; 
-        left: 0 !important;
-        right: 0 !important;
+    .project-card {
+        max-width: 500px !important; 
+        margin: 15px auto !important;
     }
 }
