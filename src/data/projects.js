@@ -142,7 +142,7 @@ export const rawProjects = [
         slug: "Sport",
         title: "Diseño deportivo",
         description: "",
-        theme: {primary: "#ffcc00", blob1: "#ff9900", blob2: "#ffee00", bg: "#050505"},
+        theme: {primary: "#e70079", blob1: "#e70079", blob2: "#e70079", bg: "#110009"},
 
         tools: [
             { name: "Photoshop", image: "/images/photoshop.png" },
