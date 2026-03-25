@@ -102,7 +102,7 @@ export const rawProjects = [
             {
                 title: "Movida_card1_title",
                 text: "Movida_card1_text",
-                image: "/projects/mMovida1.jpg"
+                image: "/projects/movida1.jpg"
             },
             {
                 title: "Movida_card2_title",

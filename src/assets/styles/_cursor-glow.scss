@@ -1,0 +1,19 @@
+@use "variables" as *;
+
+.cursor-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 400px;
+    z-index: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, $blob-color1, transparent 70%);
+    filter: blur(120px); 
+    pointer-events: none;
+    will-change: transform;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
