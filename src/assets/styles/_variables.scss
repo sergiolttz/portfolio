@@ -1,8 +1,48 @@
-$color-dark-bg: #010b24;
-$color-secondary-bg: #043b7133;
+@property --primary-color {
+    syntax: '<color>';
+    initial-value: #00bcd4;
+    inherits: true;
+}
+
+@property --blob-color1 {
+    syntax: '<color>';
+    initial-value: #004cff;
+    inherits: true;
+}
+
+@property --blob-color2 {
+    syntax: '<color>';
+    initial-value: #00ffff;
+    inherits: true;
+}
+
+@property --color-dark-bg {
+    syntax: '<color>';
+    initial-value: #010b24;
+    inherits: true;
+}
+:root {
+    --primary-color: #00bcd4;
+    --accent-blue: #007bff;
+    --blob-color1: #004cff;
+    --blob-color2: #00ffff;
+    --color-dark-bg: #010b24;
+
+    transition: --primary-color 0.8s ease,
+        --blob-color1 0.8s ease,
+        --blob-color2 0.8s ease,
+        --color-dark-bg 0.8s ease;
+}
+
 $color-text-light: #ffffff;
-$color-primary: #00bcd4;
-$color-accent-blue: #007bff;
+
+$color-primary: var(--primary-color);
+$color-accent-blue: var(--accent-blue);
+$blob-color1: var(--blob-color1);
+$blob-color2: var(--blob-color2);
+$color-dark-bg: var(--color-dark-bg);
+
+$color-secondary-bg: rgba(4, 59, 113, 0.2);
 $color-border: #ffffff1a;
 
 $btn-bg: #ffffff1a;
@@ -10,14 +50,14 @@ $btn-bg-hover: #ffffff54;
 $btn-text: $color-text-light;
 $btn-radius: 50px;
 
-$blob-color1: #004cff;
-$blob-color2: #00ffff;
-
 $card-radius: 16px;
-$card-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.5);
 $card-color: #ffffff08;
-
 $nav-color: #0000002d;
-
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 $font-main: "Outfit", sans-serif;
+$card-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.5);
+
+body {
+    background-color: var(--color-dark-bg);
+    transition: background-color 0.8s ease-in-out;
+}

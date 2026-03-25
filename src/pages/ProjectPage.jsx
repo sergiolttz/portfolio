@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { projects } from "../data/projects";
 import TechIcons from "../components/TechIcons";
@@ -5,6 +6,7 @@ import ProjectPageCard from "../components/ProjectPageCard";
 import Button from "../components/Button";
 import { useLanguage } from "../context/LanguageContext";
 import BackButton from "../components/BackButton";
+import { updateTheme } from "../utils/themeHelper";
 
 export default function ProjectPage() {
     const { getText } = useLanguage();
@@ -13,10 +15,19 @@ export default function ProjectPage() {
     const translatedTitle = getText(`${slug}_title`);
     const translatedDescription = getText(`${slug}_description`);
 
+    useEffect(() => {
+        if (project && project.theme) {
+            updateTheme(project.theme);
+        }
+        return () => {
+            updateTheme(null);
+        };
+    }, [project]);
 
     if (!project) {
         return (
             <section className="projectpage section">
+                <BackButton />
                 <h2>{getText('project_not_found')}</h2>
             </section>
         );
@@ -29,6 +40,7 @@ export default function ProjectPage() {
             <p className="projectpage-description">{translatedDescription}</p>
             <h3 className="projectpage-tools-title">{getText('tools_title')}</h3>
             <TechIcons items={project.tools} className="projectpage-tools" />
+            
             <div className="projectpage-cards">
                 {project.cards?.map((card, i) => (
                     <ProjectPageCard

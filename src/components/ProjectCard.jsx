@@ -3,7 +3,7 @@ import Card from "./Card";
 import Button from "./Button";
 import { useLanguage } from "../context/LanguageContext";
 
-export default function ProjectCard({ slug, image, delay }) {
+export default function ProjectCard({ slug, image, delay, onMouseEnter, onMouseLeave }) {
     const { getText } = useLanguage();
 
     const title = getText(`${slug}_title`);
@@ -12,8 +12,13 @@ export default function ProjectCard({ slug, image, delay }) {
     const buttonText = getText('project_card_button');
 
     return (
-        <Card rotation={2} className="project-card" delay={delay}>
-
+        <Card 
+            rotation={2} 
+            className="project-card" 
+            delay={delay}
+            onMouseEnter={onMouseEnter} 
+            onMouseLeave={onMouseLeave}
+        >
             <div className="project-image">
                 <img src={image} alt={title} />
             </div>

@@ -4,6 +4,7 @@ export const rawProjects = [
     {
         slug: "JCleaners",
         title: "JCleaners",
+        theme: { primary: "#299aca", blob1: "#299aca", blob2: "#02285b", bg: "#010c1a" },
         description: "", 
 
         tools: [
@@ -34,6 +35,7 @@ export const rawProjects = [
     {
         slug: "TasteBook",
         title: "TasteBook",
+        theme: { primary: "#c99456", blob1: "#596434", blob2: "#627522", bg: "#0c1502" },
         description: "",
 
         tools: [
@@ -64,6 +66,7 @@ export const rawProjects = [
     {
         slug: "Chemiconsult",
         title: "Chemiconsult",
+        theme: { primary: "#36b7dd", blob1: "#36b7dd", blob2: "#1393ea", bg: "#02080d" },
         description: "",
 
         tools: [
@@ -92,6 +95,7 @@ export const rawProjects = [
     {
         slug: "Movida",
         title: "Movida",
+        theme: { primary: "#c3131b", blob1: "#00bbe0", blob2: "#0199cd", bg: "#000a0d" },
         description: "",
 
         tools: [
@@ -114,6 +118,7 @@ export const rawProjects = [
     {
         slug: "JGlobal",
         title: "JGlobal Service",
+        theme: { primary: "#2896c5", blob1: "#2896c5", blob2: "#135b79", bg: "#011826" },
         description: "",
 
         tools: [
@@ -137,6 +142,7 @@ export const rawProjects = [
         slug: "Sport",
         title: "Diseño deportivo",
         description: "",
+        theme: {primary: "#ffcc00", blob1: "#ff9900", blob2: "#ffee00", bg: "#050505"},
 
         tools: [
             { name: "Photoshop", image: "/images/photoshop.png" },
